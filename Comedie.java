@@ -17,8 +17,8 @@ public class Comedie extends Film {
         Integer Duration = myObj.nextInt();
         Integer NoTickets = myObj.nextInt();
         Integer RecommendedAge = myObj.nextInt();
-        Comedie comedie = new Comedie(Duration, MovieName, NoTickets, RecommendedAge);
-        return comedie;
+        return new Comedie(Duration, MovieName, NoTickets, RecommendedAge);
+        
     }
 
     public Double calculatedPrice() {
