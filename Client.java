@@ -65,8 +65,8 @@ public class Client {
         String FirstName = myObj.nextLine();
         Integer Age = myObj.nextInt();
         Boolean HasSubscription = myObj.nextBoolean();
-        Client client = new Client(Age,LastName, FirstName,  HasSubscription);
-        return client;
+        return new Client(Age,LastName, FirstName,  HasSubscription);
+        
 
     }
 
