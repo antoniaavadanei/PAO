@@ -3,6 +3,8 @@ package com.company;
 import java.util.Scanner;
 
 public class Animation extends Film {
+    private Boolean requiresSupervisor;
+    
     public Animation(Integer duration, String movieName, Integer nrTickets, Integer recommendedAge) {
         super(duration, movieName, nrTickets, recommendedAge);
     }
@@ -17,8 +19,8 @@ public class Animation extends Film {
         Integer Duration = myObj.nextInt();
         Integer NoTickets = myObj.nextInt();
         Integer RecommendedAge = myObj.nextInt();
-        Animation animatie = new Animation(Duration, MovieName, NoTickets, RecommendedAge);
-        return animatie;
+        return new Animation(Duration, MovieName, NoTickets, RecommendedAge);
+         
     }
 
     public Double calculatedPrice() {
@@ -34,4 +36,8 @@ public class Animation extends Film {
             price=price*0.8;
         return price;
     }
+        public void setRequiresSupervisor(Boolean requiresSupervisor) {
+        this.requiresSupervisor = requiresSupervisor;
+    }
+
 }
