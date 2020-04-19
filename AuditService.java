@@ -7,15 +7,15 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class AuditService {
-    private static AuditService movie_instance = null;
+    private static AuditService audit_instance = null;
     private AuditService() {
     }
 
     public static AuditService getInstance() {
-        if (movie_instance == null)
-            movie_instance = new AuditService();
+        if (audit_instance == null)
+            audit_instance = new AuditService();
 
-        return movie_instance;
+        return audit_instance;
     }
     public void writeActionToFile(Integer i) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("audit.txt",true))) {
