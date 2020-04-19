@@ -17,8 +17,8 @@ public class Horror extends Film {
         Integer Duration = myObj.nextInt();
         Integer NoTickets = myObj.nextInt();
         Integer RecommendedAge = myObj.nextInt();
-        Horror horror = new Horror(Duration, MovieName, NoTickets, RecommendedAge);
-        return horror;
+        return new Horror(Duration, MovieName, NoTickets, RecommendedAge);
+        
     }
 
     public Double calculatedPrice() {
