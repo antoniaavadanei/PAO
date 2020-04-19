@@ -17,8 +17,8 @@ public class Romantic extends Film {
         Integer Duration = myObj.nextInt();
         Integer NoTickets = myObj.nextInt();
         Integer RecommendedAge = myObj.nextInt();
-        Romantic romantic = new Romantic(Duration, MovieName, NoTickets, RecommendedAge);
-        return romantic;
+        return new Romantic(Duration, MovieName, NoTickets, RecommendedAge);
+        
     }
 
     public Double calculatedPrice() {
