@@ -23,6 +23,28 @@ public class Service {
         }
         return FALSE;
     }
+    
+    public Boolean findClientByName(String lastName, String firstName) {
+        for (Client client : clientList) {
+            if (client.getLastName().equals(lastName) && client.getFirstName().equals(firstName)) {
+                return TRUE;
+            }
+        }
+        return FALSE;
+    }
+
+    public int returnPositionOfClient(String lastName, String firstName) {
+        for (Client client : clientList) {
+            if (client.getLastName().equals(lastName) && client.getFirstName().equals(firstName)) {
+                return clientList.indexOf(client);
+            }
+        }
+        return clientList.size();
+    }
+
+    public void deleteClient(int poz) {
+        clientList.remove(poz);
+    }
 
     ClientComparator clientComparator = new ClientComparator();
 
@@ -99,9 +121,11 @@ public class Service {
             System.out.println("Chose name of movie:");
             Scanner obj1 = new Scanner(System.in);
             String name = obj1.nextLine();
+            
             Film f = this.searchFilmByName(name);
             if (f == null)
                 System.out.println("Movie not found in category");
+            
             System.out.println("Customer:");
             Client c = new Client();
             c = c.readClient();
@@ -110,10 +134,21 @@ public class Service {
                 System.out.println("The customer is new, so is has been registered now.");
             } else
                 System.out.println("The customer registered.");
+            
             f.setClient(c);
+            
             if (f.recommendedAge > f.client.getAge())
                 System.out.println("You are below the minimum required age( " + f.recommendedAge + "). ");
             else {
+                if (type == 1) {
+                    Animation castedAnimation = (Animation) f;
+                    if (f.client.getAge() < 12) {
+                        //e animatie=> verif daca clientul are nev de insotitor
+                        castedAnimation.setRequiresSupervisor(TRUE);
+                    } else {
+                        castedAnimation.setRequiresSupervisor(FALSE);
+                    }
+                }
                 if (f.nrTickets == 0)
                     System.out.println("No tickets available.");
                 else {
@@ -128,21 +163,5 @@ public class Service {
         }
     }
 
-    public void checkTickets(String f) {
-        boolean found;
-        found = FALSE;
-        for (Map.Entry<Integer, List<Film>> entry : filmList.entrySet()) {
-            List<Film> list = entry.getValue();
-            for (Film film : list)
-                if (film.movieName.equals(f)) {
-                    System.out.println(film.nrTickets - film.soldTickets + " available tickets for " + film.movieName);
-                    found = TRUE;
-                }
-
-        }
-        if (found == FALSE)
-            System.out.println("Movie not found");
-    }
-
-
+  
 }
