@@ -1,0 +1,11 @@
+Added a customer,2020-04-17 01:12:54.878
+Displayed customers,2020-04-17 01:13:19.397
+Deleted a client,2020-04-17 01:13:54.366
+Displayed customers,2020-04-17 01:14:00.555
+Added a customer,2020-04-19 17:36:53.163
+Added a movie,2020-04-19 17:37:28.878
+Added a movie,2020-04-19 17:43:53.129
+Deleted a client,2020-04-19 17:51:24.332
+Deleted a client,2020-04-19 17:51:35.106
+Added a customer,2020-04-19 18:41:27.474
+Displayed all movies,2020-04-19 18:42:36.145
