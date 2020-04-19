@@ -17,8 +17,8 @@ public class Thriller extends Film {
         Integer Duration = myObj.nextInt();
         Integer NoTickets = myObj.nextInt();
         Integer RecommendedAge = myObj.nextInt();
-        Thriller thriller = new Thriller(Duration, MovieName, NoTickets, RecommendedAge);
-        return thriller;
+        return new Thriller(Duration, MovieName, NoTickets, RecommendedAge);
+        
     }
 
     public Double calculatedPrice() {
