@@ -1,2 +1,0 @@
-Animatie1,100,10,10
-Animatie2,120,10,7

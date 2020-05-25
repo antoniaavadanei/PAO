@@ -1,4 +1,0 @@
-comedie,120,120,12
-comedie,100,100,12
-comedie2,100,100,12
-home alone,100,100,12
